@@ -1,0 +1,10 @@
+{
+  "name": "no-libs-node-project",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.mjs"
+  },
+  "version": "1.0.0",
+  "main": "src/app.mjs",
+  "license": "MIT"
+}
