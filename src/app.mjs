@@ -14,7 +14,7 @@ const app = http.createServer((req, res) => {
   req.on("end", () => {
     req.body = data ? JSON.parse(data) : data;
 
-    res.json = (value) => {
+    res.send = (value) => {
       if (typeof value === "object") {
         res.write(JSON.stringify(value));
         res.end();

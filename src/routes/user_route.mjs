@@ -4,7 +4,7 @@ const users = [];
 
 class UseRouter extends AppRouter {
   get(req, res) {
-    res.json(users);
+    res.send(users);
   }
 
   post(req, res) {
@@ -12,8 +12,10 @@ class UseRouter extends AppRouter {
       id: users.length + 1,
       ...req.body,
     };
+
     users.push(user);
-    res.json(user);
+
+    res.send(user);
   }
 }
 
