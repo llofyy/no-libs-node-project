@@ -1,5 +1,5 @@
 import http from "http";
-import routes_list from "./routes_list.mjs";
+import routes_list from "./routes/index.mjs";
 
 const app = http.createServer((req, res) => {
   let router;
@@ -13,6 +13,16 @@ const app = http.createServer((req, res) => {
   });
   req.on("end", () => {
     req.body = data ? JSON.parse(data) : data;
+
+    res.json = (value) => {
+      if (typeof value === "object") {
+        res.write(JSON.stringify(value));
+        res.end();
+      } else {
+        res.write(value);
+        res.end();
+      }
+    };
 
     if (router) {
       router.callback(req, res);
