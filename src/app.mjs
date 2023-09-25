@@ -26,8 +26,7 @@ const app = http.createServer((req, res) => {
     if (router) {
       router.callback(req, res);
     } else {
-      res.write(`Cannot ${req.method} ${req.url}`);
-      res.end();
+      res.send(`Cannot ${req.method} ${req.url}`);
     }
   });
 });
