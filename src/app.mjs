@@ -2,8 +2,7 @@ import http from "http";
 import routes_list from "./routes/index.mjs";
 
 const app = http.createServer((req, res) => {
-  let router;
-  router = routes_list.find(
+  const router = routes_list.find(
     (route) => route.method === req.method && route.path === req.url
   );
 
