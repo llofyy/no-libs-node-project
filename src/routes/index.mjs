@@ -11,4 +11,9 @@ export default [
     path: "/user",
     callback: user_route.post,
   },
+  {
+    method: "PUT",
+    path: "/user/:id",
+    callback: user_route.put,
+  },
 ];

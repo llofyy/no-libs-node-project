@@ -17,6 +17,11 @@ class UseRouter extends AppRouter {
 
     res.send(user);
   }
+
+  put(req, res) {
+    console.log(req.params.user);
+    res.send("Teste");
+  }
 }
 
 export default new UseRouter();
